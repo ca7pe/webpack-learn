@@ -4,13 +4,15 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var AssetsPlugin = require('assets-webpack-plugin');
+var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
 	entry: {
-		'index': './src/index.js'
+		'index': './src/index.js',
+		'sub': './src/sub.js'
 	},
 	output: {
-		filename: 'bundle.js?[hash]',
+		filename: '[name].js?[hash]',
 		publicPath: "/",
 		path: './dist'
 	},
@@ -54,6 +56,13 @@ module.exports = {
 	      }
 	    }),
 	    new ExtractTextPlugin("aio.css?[hash]"),
-	    new AssetsPlugin()
-	]
+	    new AssetsPlugin(),
+	    new CommonsChunkPlugin('vendor.js?[hash]')
+	],
+	devServer: {
+		contentBase: './dist',
+		hot: true,
+		inline: true,
+		color: true
+	}
 }

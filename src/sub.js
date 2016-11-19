@@ -25,16 +25,9 @@ import style from './index.css';
 // 	}
 // };
 
-function App(){
+function Sub(){
 	return (
-		<div className={style.main}>Reacting17...{/**/}</div>
+		<div className={style.main}>Reacting_Sub_17...{/**/}</div>
 	);
 }
-
-var a = require('bundle-loader!./a');
-
-// require.ensure(['./a'], function(require) {
-//   var a = require('./a');
-// });
-
-ReactDOM.render(<App />,document.getElementById('root'));
+ReactDOM.render(<Sub />,document.getElementById('root'));

@@ -4,8 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base dist --hot --inline",
-    "dev": "webpack --watch",
+    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server --content-base dist --hot --inline",
+    "online": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "webpack": "^1.13.3"
   },
   "dependencies": {
+    "bundle-loader": "^0.5.4",
     "css-loader": "^0.26.0",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
