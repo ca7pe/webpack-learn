@@ -23,7 +23,7 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel',
 				query: {
-					presets: ['es2015', 'react']
+					presets: ['es2015', 'react', 'stage-3']
 				}
 			},
 			{
@@ -57,7 +57,7 @@ module.exports = {
 	    }),
 	    new ExtractTextPlugin("aio.css?[hash]"),
 	    new AssetsPlugin(),
-	    new CommonsChunkPlugin('vendor.js?[hash]')
+	    new CommonsChunkPlugin('vendor.js?[hash]'),
 	],
 	devServer: {
 		contentBase: './dist',
